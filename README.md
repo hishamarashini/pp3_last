@@ -11,6 +11,7 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
 #### Features
 * Existing Feature
     * Game start with the grid and explain to the player to choose number or "q" to quit.
+
 ![img](images/start.JPG)
 
 
@@ -19,7 +20,8 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
 ![img](images/error.JPG)
 
 * Input valid and error checking
-    * You cannot enter any letter or numbers greater than number 9, 
+    * You cannot enter any letter or numbers greater than number 9.
+
 ![img](images/you_won.JPG)
 
     * Result for winner, or loser and if it's tie.
@@ -36,6 +38,11 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
     * No errors
 
 #### Deployment
+* This project was deployed using deplpoyment method at Heroku and connected with Github, 
+    * Creating a new Heroku app
+    * Set the buildbacks to Python and Node Js in the order  as I get fron the template that i got from Love Sandwiches project.
+    * Link the Heroku app to repositry
+    * Click on manual Deploy.
 
 
 #### Credits
