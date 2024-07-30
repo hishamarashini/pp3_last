@@ -20,7 +20,7 @@ The one who succeeds in placing three of their marks in a horizontal, vertical, 
 ![img](images/error.JPG)
 
 * Input valid and error checking
-    * You cannot enter any letter or numbers greater than number 9.
+    * You cannot enter any wrong letter or numbers greater than number 9, it will give invalid entry
 
 ![img](images/you_won.JPG)
 
