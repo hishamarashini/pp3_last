@@ -8,7 +8,7 @@ computer_choice_history = []
 
 def check_target_status(target):
     """
-    Checking the target if it is diagonal or vertical or horiz
+    Check if the target contains a winning combination.
     """
     for i in range(3):
         # If the cell is to the absolute left
@@ -34,25 +34,23 @@ def check_target_status(target):
 
 def computer_choose():
     """
-    Computer chooses a position for its move
+    Computer chooses a position for its move.
     """
     choice = -1
     while True:
         # Choosing a random number from the valid cells in the grid
         random_choice = random.randint(0, 8)
         # Checking if the random choice collides with a previous choice
-        if random_choice not in player_choice_history:
-            if random_choice not in computer_choice_history:
-                # If it doesn't, choose this cell and break out of the loop.
-                # Else, repeat until it doesn't collide
-                choice = random_choice
-                break
+        if random_choice not in player_choice_history and random_choice not in computer_choice_history:
+            # If it doesn't, choose this cell and break out of the loop.
+            choice = random_choice
+            break
     return choice
 
 
 def gen_game_grid():
     """
-    Player and computer choice
+    Generate the current game grid with player and computer choices.
     """
     to_return = ""
     for j in range(9):
@@ -70,21 +68,23 @@ def gen_game_grid():
 
     return to_return
 
+
 is_gameover = False
-print("Welcome to X||O (The Game)).")
+print("Welcome to X||O (The Game).")
 print("You play as X, Computer plays as O")
 while True:
     print(gen_game_grid())
-    if(is_gameover):
-        _user_input = input("r to start a new game, or q to quit")
-        if(_user_input == "q"):
+    if is_gameover:
+        user_input = input("r to start a new game, or q to quit: ")
+        if user_input == "q":
             break
-        elif(_user_input == "r"):
+        elif user_input == "r":
             game_grid = []
             player_choice_history = []
-            computer_choice_history = [] 
+            computer_choice_history = []
             is_gameover = False
-            print(gen_game_grid())
+            os.system('cls' if os.name == 'nt' else 'clear')
+            continue
 
     user_input = input("Choose a number from the grid; or q to quit game: \n")
     if user_input == "q":
@@ -96,13 +96,16 @@ while True:
         print("Invalid entry")
         continue
 
+    if user_input - 1 in player_choice_history or user_input - 1 in computer_choice_history:
+        print("Cell already taken. Choose another.")
+        continue
+
     player_choice_history.append(user_input - 1)
+    os.system('cls' if os.name == 'nt' else 'clear')
     if check_target_status(player_choice_history):
-        os.system('cls' if os.name == 'nt' else 'clear')
         print("You won. Good job.")
         is_gameover = True
     elif len(computer_choice_history) + len(player_choice_history) >= 9:
-        os.system('cls' if os.name == 'nt' else 'clear')
         print("It's a tie, better luck next time.")
         is_gameover = True
     else:
@@ -111,6 +114,6 @@ while True:
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Computer won. Better luck next time.")
             is_gameover = True
-    
+
     if not is_gameover:
         os.system('cls' if os.name == 'nt' else 'clear')
