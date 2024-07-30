@@ -26,12 +26,13 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
 
     * Result for winner, or loser and if it's tie.
 
-
-
-
 #### Data Model
+The game start with grid of numbers from 1 to 9, adding text explaining to the player to choose number and will change to "X", and the computer will choose the "O" randomly, the player can choose "q" to quit the game, or "r" to restart again.
 
 #### Testing
+* I manually tested this project at PEP8 and confirmed that no problems.
+* Played the game using undefined numbers or letter to insure the code will give invailed entry
+* Tested the code in Heroku terminal
 #### Bugs
 #### Validating
 * PEP8
