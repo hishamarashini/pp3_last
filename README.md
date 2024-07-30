@@ -10,6 +10,21 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
 
 #### Features
 * Existing Feature
+    * Game start with the grid and explain to the player to choose number or "q" to quit.
+![img](images/start.JPG)
+
+
+    * The player will start with letter "X", and the computer will choose "O".
+
+![img](images/error.JPG)
+
+* Input valid and error checking
+    * You cannot enter any letter or numbers greater than number 9, 
+![img](images/you_won.JPG)
+
+    * Result for winner, or loser and if it's tie.
+
+
 
 
 #### Data Model
