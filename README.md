@@ -1,6 +1,7 @@
 ### X||O GAME
 
 The X,O game is a Python terminal game which runs in mock terminal on Heroku. Played on a three-by-three grid by player with a computer who alternately place the marks X and O in one of the nine numbers in the grid.
+[Link to live version of my project](https://pp3-last-f8d180165b83.herokuapp.com/)
 
 ![img](images/responsiv22.png)
 
