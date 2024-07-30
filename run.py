@@ -70,11 +70,22 @@ def gen_game_grid():
 
     return to_return
 
-
+is_gameover = False
 print("Welcome to X||O (The Game)).")
 print("You play as X, Computer plays as O")
 while True:
     print(gen_game_grid())
+    if(is_gameover):
+        _user_input = input("r to start a new game, or q to quit")
+        if(_user_input == "q"):
+            break
+        elif(_user_input == "r"):
+            game_grid = []
+            player_choice_history = []
+            computer_choice_history = [] 
+            is_gameover = False
+            print(gen_game_grid())
+
     user_input = input("Choose a number from the grid; or q to quit game: \n")
     if user_input == "q":
         print("Thanks for playing the game.")
@@ -89,19 +100,17 @@ while True:
     if check_target_status(player_choice_history):
         os.system('cls' if os.name == 'nt' else 'clear')
         print("You won. Good job.")
-        print(gen_game_grid())
-        break
-
-    if len(computer_choice_history) + len(player_choice_history) >= 9:
+        is_gameover = True
+    elif len(computer_choice_history) + len(player_choice_history) >= 9:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("It's a tie, better luck next time.")
-        print(gen_game_grid())
-        break
-
-    computer_choice_history.append(computer_choose())
-    if check_target_status(computer_choice_history):
+        is_gameover = True
+    else:
+        computer_choice_history.append(computer_choose())
+        if check_target_status(computer_choice_history):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("Computer won. Better luck next time.")
+            is_gameover = True
+    
+    if not is_gameover:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Computer won. Better luck next time.")
-        print(gen_game_grid())
-        break
-    os.system('cls' if os.name == 'nt' else 'clear')
