@@ -7,6 +7,9 @@ computer_choice_history = []
 
 
 def check_target_status(target):
+    """
+    Checking the target if it is diagonal or vertical or horiz
+    """
     for i in range(3):
         # If the cell is to the absolute left
         if i % 3 == 0:
@@ -30,6 +33,9 @@ def check_target_status(target):
 
 
 def computer_choose():
+    """
+    Computer chooses a position for its move
+    """
     choice = -1
     while True:
         # Choosing a random number from the valid cells in the grid
@@ -45,6 +51,9 @@ def computer_choose():
 
 
 def gen_game_grid():
+    """
+    Player and computer choice
+    """
     to_return = ""
     for j in range(9):
         if j in player_choice_history:
@@ -63,6 +72,7 @@ def gen_game_grid():
 
 
 print("Welcome to X||O (The Game)).")
+print("Type number of the grid you will be X,and the computer choose O randomly")
 while True:
     print(gen_game_grid())
     user_input = input("Choose a number from the grid; or q to quit game: \n")
@@ -71,6 +81,9 @@ while True:
         break
     if user_input.isdigit():
         user_input = int(user_input)
+    else:
+        print("Invalid entry")
+        continue
 
     player_choice_history.append(user_input - 1)
     if check_target_status(player_choice_history):

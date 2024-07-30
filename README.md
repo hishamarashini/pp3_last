@@ -36,11 +36,11 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
 #### Validating
 * PEP8
     * No errors
-    
+
 ![img](images/pep8_test.JPG)   
 
 #### Deployment
-* This project was deployed using deplpoyment method at Heroku and connected with Github, 
+* This project was deployed using deployment method at Heroku and connected with Github, 
     * Creating a new Heroku app
     * Set the buildbacks to Python and Node Js in the order  as I get fron the template that i got from Love Sandwiches project.
     * Link the Heroku app to repositry
