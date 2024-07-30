@@ -72,7 +72,7 @@ def gen_game_grid():
 
 
 print("Welcome to X||O (The Game)).")
-print("Type number of the grid you will be X,and the computer choose O randomly")
+print("You play as X, Computer plays as O")
 while True:
     print(gen_game_grid())
     user_input = input("Choose a number from the grid; or q to quit game: \n")
