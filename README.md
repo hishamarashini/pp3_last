@@ -36,6 +36,8 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
 #### Validating
 * PEP8
     * No errors
+    
+![img](images/pep8_test.JPG)   
 
 #### Deployment
 * This project was deployed using deplpoyment method at Heroku and connected with Github, 
