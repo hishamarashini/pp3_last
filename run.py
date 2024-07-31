@@ -12,15 +12,13 @@ def check_target_status(target):
     """
     for i in range(3):
         # If the cell is to the absolute left
-        if i % 3 == 0:
-            # Check if 3 consecutive cells are selected (e.g., 123, 456, 789)
-            if i in target and i + 1 in target and i + 2 in target:
-                return True
+        # Check if 3 consecutive cells are selected (e.g., 123, 456, 789)
+        if (i*3) in target and (i*3) + 1 in target and (i*3) + 2 in target:
+            return True
         # If the value is below 3, check if any vertically consecutive cells
         # are selected from top to bottom (e.g., 147, 258, 369)
-        if i < 3:
-            if i in target and i + 3 in target and i + 6 in target:
-                return True
+        if i in target and i + 3 in target and i + 6 in target:
+            return True
 
     # Checking diagonal top left to bottom right
     if 0 in target and 4 in target and 8 in target:

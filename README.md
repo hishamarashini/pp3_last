@@ -51,7 +51,7 @@ The game start with grid of numbers from 1 to 9, adding text explaining to the p
 * Set the buildbacks to Python and Node Js in Heroku settings in order as I get from the template that i got from project.
 * Link the Heroku app to the repositry
 * Click on manual Deploy.
-* Test the code in Heroku terminal after deployment.
+* Test the code in Heroku terminal after deployment. 
 
 
 #### Credits
